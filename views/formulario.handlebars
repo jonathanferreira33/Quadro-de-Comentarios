@@ -1,0 +1,28 @@
+<div style="display:flex">
+
+    <div style=' display-flex:flex; flex:50%; height: 100vh; '>
+
+        <form action="/post" method="POST" style='padding: 50px'>
+            <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular'; font-size: 15pt; text-align: center; font-weight: bold">Digite um comentário:</p>
+            <textarea name='conteudo' cols='80' rows='10'style="margin-top:30px"></textarea>
+            <button type="submit" style="font-family: 'Lucida Sans', 'Lucida Sans Regular'; font-size: 13pt; text-transform: uppercase; margin-top: 10px; width: 97%; cursor:pointer">Cadastrar postagem</button>
+        </form>
+    </div>
+    
+    <div style="height:700px; border-left:2px solid #858585; box-sizing: border-box; margin-top: 40px;"></div>
+
+    <div style=' display:flex; flex:50%; flex-direction:column; height: 100vh; align-items: center;'>
+        <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular'; font-size: 15pt; text-align: center;padding: 30px; font-weight: bold">Comentários:</p>
+        {{#each posts}}
+            <div style="display: flex; align-items: center;justify-content: space-between; width: 80%; flex-direction: row; margin-bottom:20px">
+                <p style="">{{dataValues.conteudo}}</p>
+                <div style="display: flex; justify-content: center;align-items: center; height:100%;width: 25%;">
+                <a href="/deletar/{{dataValues.id}}"><button>Deletar</button></a>
+                <button style=" width: 60px; height: 20px; margin-left: 5px;">Ouvir</button>
+                </div>
+            </div>
+
+        {{/each}}
+
+    </div>
+</div>
